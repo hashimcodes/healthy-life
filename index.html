@@ -3,34 +3,73 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Healthy Life</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" type="image/png" href="resources/pics/hf.png">
 </head>
 <body>
-    <div class="backGround">
 
+  <div class="navbar">
+      <div class="container flex">
+        <h1>Healthy Life</h1>
+        <nav>
+          <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">About Us</a></li>
+            <li><a href="#">Contact Us</a></li>
+            <li><a href="#">Account</a></li>
+        </ul>
+        </nav>
+      </div>
+  </div>
+
+
+
+  <section class="main-layout">
+    <div id="res"></div>
+    <div class="container grid">
+      <div class="item">
+        <h1>Change your life today,<br/>health is matter.</h1>
+
+        <form
+        class="input-form"
+        method="post"
+        autocomplete="on"
+        validate
+        >
+        <label class="height-label"><b>Height:</b></label>
+        <br>
+        <input
+          type="text"
+          name="hightd"
+          id="heightID"
+          placeholder="Enter your height in CM"
+          value=""
+        />
+        <br /><br />
+        <label class="weight-label"><b>Weight:</b></label>
+        <br>
+        <input
+          type="text"
+          name="weightd"
+          id="weightID"
+          placeholder="Enter your weight in KG "
+          value=""
+        />
+        <br/><br/>
+        <input id="clickMe" type="button" value="Calculate" onclick="result()" />
+      </form>
+
+      <p class="bmi-info">Body mass index (BMI) is a measure of body fat based on height and weight that applies to adult men and women.
+        <br>
+        <br>Underweight =<18.5
+        <br> Normal weight = 18.5–24.9
+        <br>Overweight = 25–29.9
+        <br>Obesity = BMI of 30 or greater</p>
     </div>
-    <div class="grid-container"> 
-        <div class="grid-item1">
-
-            <h5>Your BMI is 35 - Obesity</h5>
-            <h5>Here is 10 tips for you:</h5>
+      
+    <img id="fitPic" src="resources/pics/fitPic1.png" alt="Fitness"/>
+  </section>
     
-            <ol>
-                <li>Eat plenty of soluble fiber.</li>
-                <li>Follow a High-Protein Diet</li>
-                <li>Squeeze in More Sleep</li>
-                <li>Add Vinegar to Your Diet</li>
-                <li>Eat More Healthy Fats</li>
-                <li>Drink Healthier Beverages</li>
-                <li>Fill up on Fiber</li>
-                <li>Cut Down on Refined Carbs</li>
-                <li>Increase Your Cardio</li>
-                <li>Add Probiotics to Your Diet</li>
-            </ol>
-        </div>
-
-        <img class="grid-item2" src="resources/pics/pic1.png" alt="Food">
-    </div> 
-   
 </body>
+<script src="scripts/app.js"></script>
 </html>
