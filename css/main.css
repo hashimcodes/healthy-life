@@ -1,0 +1,71 @@
+@font-face {
+    font-family: google-sans;
+    src: url(../resources/fonts/GoogleSans-Regular.ttf);
+}
+
+
+*{
+    box-sizing: border-box;
+    padding: 0px;
+    margin: 0px;
+}
+
+body {
+    font-family: google-sans;
+    padding-top: 15px;
+}
+
+
+/* navigation bar styles */
+ul {
+    list-style-type: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+h1 {
+    font-weight: 300;
+    line-height: 1.2;
+    margin: 10px 0;
+}
+
+.navbar {
+    color: #3751FE;
+    height: 70px;
+}
+
+.navbar ul {
+    display: flex;
+}
+
+
+.navbar a {
+    padding: 10px;
+    margin: 0 5px;
+    color: #000;
+}
+
+.navbar a:hover {
+    border-bottom: 2px solid #3751FE;
+}
+
+.navbar .flex {
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+}
+
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    overflow: auto;
+    padding: 0 40px;
+    padding-top: 10px;
+}
+
+
+.flex {
+    display: flex;
+}

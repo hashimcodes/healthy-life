@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Healthy Life</title>
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/login-style.css" />
+    <link rel="icon" type="image/png" href="resources/pics/hf.png" />
+  </head>
+
+  <body>
+    
+  <div class="navbar">
+    <div class="container flex">
+      <h1>Healthy Life</h1>
+      <nav>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="under-work.html">About Us</a></li>
+          <li><a href="under-work.html">Contact Us</a></li>
+          <li><a href="#">Account</a></li>
+      </ul>
+      </nav>
+    </div>
+</div>
+
+<section class="main-layout">
+  <div class="container grid">
+    <div class="item">
+      <h1>Change your life today,<br/>health is matter.</h1>
+      <br/>
+      <h5 class="welc-back">Welcome back! please login to your account</h5>
+      <form
+        class="input-form"
+        id="login"
+        method="post"
+        action="login.html"
+        autocomplete="on"
+        validate
+      >
+      <label for="Uname"><b>User Name </b> </label>
+      <br/>
+      <input
+        type="email"
+        name="Unamed"
+        id="Uname"
+        placeholder="User name "
+      />
+      <br/><br/>
+      <label for="Pass"><b>Password </b> </label>
+      <br/>
+      <input
+        type="Password"
+        name="Passd"
+        id="PassID"
+        placeholder="password"
+        value=""
+      />
+      <br/><br/>
+      <input type="checkbox" id="check" />
+      <span>Remember me</span>
+      <a id="forgetpass" href="#">Forget Password ?</a>
+      <br /><br />
+      <input
+        type="button"
+        name="log"
+        id="log"
+        value="Log In"
+        onclick="location.href='#'" 
+      />
+      <input
+        type="button"
+        name="signup"
+        id="signup"
+        value="sign Up"
+        onclick="location.href='sign-up.html'"
+      />
+      <!-- onclick = action-->
+    </form> 
+    </div>
+  <img id="fitPic" src="resources/pics/Cycle photo.png" alt="Fitness"/>
+</section>
+  
+</body>
+<script src=""></script>
+</html>

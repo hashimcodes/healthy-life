@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Healthy Life</title>
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/signUP-style.css" />
+    <link rel="icon" type="image/png" href="resources/pics/hf.png" />
+  </head>
+
+  <body>
+  <div class="navbar">
+    <div class="container flex">
+      <h1>Healthy Life</h1>
+      <nav>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="under-work.html">About Us</a></li>
+          <li><a href="under-work.html">Contact Us</a></li>
+          <li><a href="login.html">Account</a></li>
+      </ul>
+      </nav>
+    </div>
+</div>
+
+<section class="main-layout">
+  <div class="container grid">
+    <div class="item">
+      <h1>Change your life today,<br/>health is matter.</h1>
+      <br/>
+      <h5 class="welc">Welcome! please Sign Up</h5>
+      <form
+      class="signUP-form"
+      id="signUP"
+      method="post"
+      action="login.html"
+      autocomplete="on"
+      validate
+      >
+      <label for="Fname"><b>First Name</b> </label>
+      <label id="Lname"><b>Last Name</b> </label>
+      <br/>
+            <input
+              type="text"
+              name="Fnamed"
+              id="Fname"
+              placeholder=" First Name"
+              value=""
+            />
+      
+            <input
+              type="text"
+              name="Lname"
+              id="lname"
+              placeholder=" Last Name"
+              value=""
+            />
+      <br/> <br>
+      <label for="EmailAddress"><b>Email Address</b> </label>
+      <br/> 
+            <input
+              type="email"
+              name="Email"
+              id="Email"
+              placeholder="Enter your email"
+            />
+      <br /> <br>
+      <label for="Pass"><b>Password </b> </label>
+      <br/>
+            <input
+              type="Password"
+              name="Passd"
+              id="PassID"
+              placeholder="password"
+              value=""
+            />
+      <br/><br/>
+      <input
+      type="button"
+      name="signup"
+      id="signup"
+      value="sign Up"
+      onclick="location.href='#'"
+    />
+      <!-- onclick = action-->
+    </form> 
+    <br>
+    <a href="login.html">Already have account?</a>
+    </div>
+  <img id="fitPic" src="resources/pics/Cycle photo.png" alt="Fitness"/>
+</section>
+  
+</body>
+<script src=""></script>
+</html>
