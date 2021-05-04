@@ -2,10 +2,6 @@
 function result(){
     let x = parseInt(document.getElementById("heightID").value, 10);
     let y = parseInt(document.getElementById("weightID").value, 10);
-    
-    if (x == NaN || y == NaN) {
-        return;
-    }
 
     console.log(x);
     console.log(y);
@@ -102,8 +98,13 @@ function result(){
                             `<img class="grid-item2" src="${pic}" alt="Food">`+
                         '</div>'; 
 
-
-    document.getElementById("fitPic").style.display = 'none';
-    document.getElementById("res").innerHTML = codeBlock;
+    if ((x < 220 && x > 40) && (y > 30 && y < 250)) {
+            document.getElementById("fitPic").style.display = 'none';
+            document.getElementById("warr-msg").style.display = 'none'
+            document.getElementById("res").innerHTML = codeBlock;
+    }
+    else {
+        document.getElementById("warr-msg").style.display = 'block';
+    }
 }
  

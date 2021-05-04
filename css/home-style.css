@@ -100,8 +100,15 @@ label{
     background-color: #3751fe;
 }
 
+
+#warr-msg{
+    padding-top: 20px;
+    color: red;
+    display: none;
+}
+
 .bmi-info{
-    padding-top: 100px;
+    padding-top: 60px;
     max-width: 350px;
     color: #333;
     font-size: 12px;
