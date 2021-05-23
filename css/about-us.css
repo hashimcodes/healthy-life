@@ -4,7 +4,7 @@
     margin: 0 auto;
     gap: 50px;
     grid-template-columns: auto  auto auto;
-    padding-top: 40px;
+    padding-top: 70px;
 }
 
 .grid h1{
