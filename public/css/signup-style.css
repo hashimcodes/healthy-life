@@ -1,0 +1,74 @@
+
+/* main page grid styles */
+.grid {
+  display: grid;
+  margin: 0 auto;
+  gap: 50px;
+  grid-template-columns: 528px auto;
+  padding-top: 40px;
+}
+
+.grid h1 {
+  color: #3751fe;
+  font-weight: 300;
+  padding-bottom: 30px;
+}
+
+label {
+  color: #3751fe;
+  margin-top: 10px;
+}
+
+#fitPic {
+  width: 474px;
+  height: 428px;
+}
+
+
+.welc{
+  font-size: 16px;
+  padding-bottom: 10px;
+}
+
+input[type="email"],
+input[type="password"] {
+  width: 250px;
+  height: 40px;
+  border-radius: 5px;
+  padding-left: 8px;
+  transition: border-left-color 0.5s;
+}
+
+input[type="text"] {
+  width: 123px;
+  height: 40px;
+  border-radius: 5px;
+  padding-left: 2px;
+  transition: border-left-color 0.5s;
+}
+
+input[type="email"]:hover {
+  border-left: 3px solid #3751fe;
+}
+
+input[type="password"]:hover {
+  border-left: 3px solid #3751fe;
+}
+
+input[type="text"]:hover {
+  border-left: 3px solid #3751fe;
+}
+
+#signup {
+  width: 100px;
+    height: 25px;
+    border: none;
+    border-radius: 10px;
+    color: white;
+    background-color: #3751fe;
+}
+
+#Lname {
+  margin-left: 47px;
+}
+

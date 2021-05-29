@@ -34,9 +34,9 @@
       <h5 class="welc-back">Welcome back! please login to your account</h5>
       <form
         class="input-form"
+        method="POST"
+        action="/"
         id="login"
-        method="post"
-        action="login.html"
         autocomplete="on"
         validate
       >
@@ -44,8 +44,8 @@
       <br/>
       <input
         type="email"
-        name="Unamed"
-        id="Uname"
+        name="username"
+        id="username"
         placeholder="User name "
       />
       <br/><br/>
@@ -53,8 +53,8 @@
       <br/>
       <input
         type="Password"
-        name="Passd"
-        id="PassID"
+        name="password"
+        id="password"
         placeholder="password"
         value=""
       />
@@ -64,11 +64,10 @@
       <a id="forgetpass" href="#">Forget Password ?</a>
       <br /><br />
       <input
-        type="button"
+        type="submit"
         name="log"
         id="log"
         value="Log In"
-        onclick="location.href='#'" 
       />
       <input
         type="button"
@@ -77,10 +76,10 @@
         value="sign Up"
         onclick="location.href='sign-up.html'"
       />
-    </form> 
+    </form>
     </div>
   <img id="fitPic" src="resources/pics/Cycle photo.png" alt="Fitness"/>
 </section>
-  
-  </body>
+</body>
+<script src="scripts/log.js"></script>
 </html>

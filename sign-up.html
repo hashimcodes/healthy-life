@@ -35,7 +35,7 @@
         class="signUP-form"
         id="signUP"
         method="post"
-        action="login.html"
+        action="/"
         autocomplete="on"
         validate
         >
@@ -47,14 +47,12 @@
           name="Fnamed"
           id="Fname"
           placeholder=" First Name"
-          value=""
         />
         <input
           type="text"
           name="Lname"
           id="lname"
           placeholder=" Last Name"
-          value=""
         />
         <br/><br>
         <label for="EmailAddress"><b>Email Address</b> </label>
@@ -73,15 +71,19 @@
           name="Passd"
           id="PassID"
           placeholder="password"
-          value=""
         />
+        <br /> <br>
+        <label for="gender"><b>Gender </b> </label>
+        <br/>
+        <input type="radio" name="gender" value="Male">
+        <label for="male">Male</label><br>
+        <input type="radio"  name="gender" value="Female">
+        <label for="female">Female</label><br>
         <br/><br/>
         <input
-          type="button"
-          name="signup"
+          type="submit"
           id="signup"
           value="sign Up"
-          onclick="location.href='#'"
         />
       </form> 
       <br>
@@ -90,4 +92,5 @@
       <img id="fitPic" src="resources/pics/Cycle photo.png" alt="Fitness"/>
   </section>
   </body>
+  <script src="scripts/reg.js"></script>
 </html>

@@ -1,0 +1,102 @@
+
+/* main page grid styles */
+.grid {
+    display: grid;
+    margin: 0 auto;
+    gap: 50px;
+    grid-template-columns: 583px  auto auto;
+    padding-top: 40px;
+}
+
+.grid h1{
+    color: #3751FE;
+    font-weight: 300;
+    padding-bottom: 50px;
+}
+
+label{
+    color: #3751FE;
+}
+
+input[type="text"] {
+    width: 200px;
+    height: 40px;
+    border-radius: 5px;
+    padding-left: 8px;
+    transition: border-left-color 0.5s;
+}
+
+input[type="text"]:hover {
+    border-left: 3px solid #3751fe;
+}
+
+#clickMe{
+    width: 100px;
+    height: 25px;
+    border: none;
+    border-radius: 10px;
+    color: white;
+    background-color: #3751fe;
+}
+
+
+#warr-msg{
+    padding-top: 20px;
+    color: red;
+    display: none;
+}
+
+.bmi-info{
+    padding-top: 60px;
+    max-width: 350px;
+    color: #333;
+    font-size: 12px;
+}
+
+#fitPic{
+    width: 360px;
+    height: 500px;
+    padding-top: 15px;
+}
+
+
+
+/* result panel styles */
+.grid-container {
+    display: grid;
+    grid-template-columns: 347px auto auto;
+    width: 1014px;
+    height: 549px;
+    position: absolute;
+    left: 900px;
+    top: 220px;
+    border: 3px solid #3751FE;
+    border-radius: 10px;
+    zoom: 0.75;
+}
+
+.grid-item1{
+    padding-left: 25px;
+    padding-top: 50px;
+}
+
+
+.grid-item2 {
+    border-radius: 0 10px 10px 0;
+    width: 660px;
+    height: 543px;
+}
+
+h5{
+    font-size: 22px;
+    font-family: google-sans;
+    padding-top: 15px;
+}
+
+ol{
+    font-size: 20px;
+    font-family: google-sans;
+    padding-top: 20px;
+    padding-left: 25px;
+}
+

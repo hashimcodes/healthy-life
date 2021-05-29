@@ -1,0 +1,19 @@
+
+.grid {
+    display: grid;
+    margin: 0 auto;
+    gap: 50px;
+    grid-template-columns: auto  auto auto;
+    padding-top: 70px;
+}
+
+.grid h1{
+    color: #3751FE;
+    font-weight: 300;
+    padding-bottom: 50px;
+}
+
+.item2{
+    padding-top: 127px;
+    padding-left: 20px;
+}

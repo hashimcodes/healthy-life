@@ -1,0 +1,55 @@
+@font-face {
+    font-family: google-sans;
+    src: url(../resources/fonts/GoogleSans-Regular.ttf);
+}
+
+
+*{
+    box-sizing: border-box;
+    padding: 0px;
+    margin: 0px;
+}
+
+body {
+    font-family: google-sans;
+    padding-top: 20px;
+    color: #3751FE;
+}
+
+
+h1 {
+    font-weight: 300;
+    line-height: 1.2;
+    text-align: center;
+    padding-bottom: 10px;
+}
+
+.const-img{
+    width: 783px;
+    height: 470px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+}
+
+.const-txt{
+    font-size: 24px;
+    text-align: center;
+}
+
+.wrapper {
+    text-align: center;
+    padding-top: 20px;
+}
+
+a {
+    background-color: #3751FE;
+    color: #fff;
+    width: 100px;
+    height: 25px;
+    text-decoration: none;
+    font-size: 16px;
+    border: 5px solid #3751FE;
+    border-radius: 10px;
+}
