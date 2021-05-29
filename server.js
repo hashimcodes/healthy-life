@@ -78,6 +78,8 @@ app.post('/', (req, res) => {
             console.log('mawgood');
             if (email === 'admin@admin.com' && password ==='admin') {
                 res.redirect("/admin");
+                activity.log = 1;
+                activity.email = email;
             } else {
                 res.redirect("/index");
                 activity.log = 1;
@@ -119,26 +121,27 @@ app.post('/result',(req, res)=>{
 
     console.log(email);
     console.log(bmi);
-
-    let query1 = dB.query('select client_profile.client_id from client_profile where client_profile.email = ?',[email], (err, result) => {
-        if(err) {
-            //res.redirect("/");
-            throw err;
-        } else {
-            console.log('email founded...');
-            cliendId = {};
-            cliendId = result[0].client_id;
-            console.log(cliendId);
-            let query2 = dB.query('INSERT INTO `healthy_life`.`client_activity` (`client_id`, `BMI_result`, `calculation_date`, `calculation_time`) VALUES ( ?, ?, current_date(), current_time());', [cliendId, bmi], (err, result)=>{
-                if(err) {
-                    //res.redirect("/");
-                    throw err;
-                } else {
-                    console.log('record added...');
-                }
-            });
-        }
-    });
+    if (activity.log === 1) {
+        let query1 = dB.query('select client_profile.client_id from client_profile where client_profile.email = ?',[email], (err, result) => {
+            if(err) {
+                //res.redirect("/");
+                throw err;
+            } else {
+                console.log('email founded...');
+                cliendId = {};
+                cliendId = result[0].client_id;
+                console.log(cliendId);
+                let query2 = dB.query('INSERT INTO `healthy_life`.`client_activity` (`client_id`, `BMI_result`, `calculation_date`, `calculation_time`) VALUES ( ?, ?, current_date(), current_time());', [cliendId, bmi], (err, result)=>{
+                    if(err) {
+                        //res.redirect("/");
+                        throw err;
+                    } else {
+                        console.log('record added...');
+                    }
+                });
+            }
+        });
+    } 
 });
 
 

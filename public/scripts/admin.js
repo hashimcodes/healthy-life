@@ -27,10 +27,11 @@ let number = {};
 number = await data.json();
 console.log(number);
 
-let code = '<label for="">Total users</label>' +
-                '<br><br>' +
+let code = //'<label class="resLabel" for="">Total users</label>' +
+                '<p>Total activities:<p>' +
+                '<br>' +
                 `<p>${number.data}</p>` +
-                '<br><br><br>';
+                '<br><br>';
 
     document.getElementById('result1').innerHTML = code;
 return number;
@@ -45,10 +46,11 @@ let number = {};
 number = await data.json();
 console.log(number);
 
-let code =  '<label for="">Total activities</label>' +
-                '<br><br>' +
+let code =  //'<label class="resLabel" for="">Total activities</label>' +
+                '<p>Total activities:<p>' +
+                '<br>' +
                 `<p>${number.data}</p>` +
-                '<br><br><br>';
+                '<br><br>';
 
     document.getElementById('result2').innerHTML = code;
 return number;
