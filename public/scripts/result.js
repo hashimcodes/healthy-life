@@ -1,4 +1,3 @@
-
 function result(){
     let x = parseInt(document.getElementById("heightID").value, 10);
     let y = parseInt(document.getElementById("weightID").value, 10);
@@ -10,7 +9,7 @@ function result(){
     let height = (x / 100)*(x / 100);
     let bmi = (weight/height).toFixed(1);
     
-    console.log(bmi);
+    bmiToServer(bmi);
 
     let resString = '';
     let pic = '';
@@ -108,3 +107,14 @@ function result(){
     }
 }
  
+const bmiToServer = async (bmi)=>{ 
+    await fetch('/result',{
+    method : 'POST',
+    credentials:'same-origin',
+    headers:{
+        "content-Type":"application/json"
+    },
+    body:JSON.stringify({
+        bmi,
+    })
+})};

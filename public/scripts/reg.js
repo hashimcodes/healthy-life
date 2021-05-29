@@ -38,7 +38,6 @@ const regDataToServer = async (firstName, lastName, email, signupPass, gender)=>
         email,
         signupPass,
         gender,
-        num: 5,
     })
 })};
 

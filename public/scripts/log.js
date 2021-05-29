@@ -20,6 +20,5 @@ const logDataToServer = async (username, password)=>{
     body:JSON.stringify({
         username,
         password,
-        num: 2,
     })
 })};

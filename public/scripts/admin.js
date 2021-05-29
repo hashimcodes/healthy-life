@@ -1,28 +1,55 @@
 
-const updateButton = document.getElementById('resBtn');
-updateButton.addEventListener('click', async ()=>{
+const updateButton1 = document.getElementById('resBtn1');
+updateButton1.addEventListener('click', async ()=>{
 
-    getData();
+    getData1();
+    document.getElementById('result1').style.display = 'block';
+    document.getElementById('result2').style.display = 'none';
 
 });
 
-const getData = async ()=>{ 
-    const data = await fetch('/data',{
+
+const updateButton2 = document.getElementById('resBtn2');
+updateButton2.addEventListener('click', async ()=>{
+
+    getData2();
+    document.getElementById('result1').style.display = 'none';
+    document.getElementById('result2').style.display = 'block';
+
+});
+
+const getData1 = async ()=>{ 
+    const data = await fetch('/data1',{
     method : 'GET',
     credentials:'same-origin',
 })
-const number = await data.json();
+let number = {};
+number = await data.json();
 console.log(number);
 
 let code = '<label for="">Total users</label>' +
                 '<br><br>' +
-                `<p>${JSON.stringify(number)}</p>` +
-                '<br><br><br>' +
-                '<label for="">Total activities</label>' +
-                '<br><br>' +
-                `<p>${JSON.stringify(number)}</p>` +
+                `<p>${number.data}</p>` +
                 '<br><br><br>';
-    document.getElementById('result').innerHTML = code;
+
+    document.getElementById('result1').innerHTML = code;
 return number;
 };
 
+const getData2 = async ()=>{ 
+    const data = await fetch('/data2',{
+    method : 'GET',
+    credentials:'same-origin',
+})
+let number = {};
+number = await data.json();
+console.log(number);
+
+let code =  '<label for="">Total activities</label>' +
+                '<br><br>' +
+                `<p>${number.data}</p>` +
+                '<br><br><br>';
+
+    document.getElementById('result2').innerHTML = code;
+return number;
+};

@@ -70,11 +70,12 @@ h1 {
     display: flex;
 }
 
-#resBtn{
+#resBtn1 ,#resBtn2{
     width: 100px;
     height: 25px;
     border: none;
     border-radius: 10px;
     color: white;
     background-color: #3751fe;
+    margin-bottom: 10px;
 }

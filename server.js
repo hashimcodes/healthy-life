@@ -61,6 +61,9 @@ app.post('/reg',(req, res)=>{
     });
 });
 
+activity = {
+    log: '',
+    email: '',};
 //login verification
 app.post('/', (req, res) => {
     
@@ -72,84 +75,84 @@ app.post('/', (req, res) => {
 
     let query = dB.query('select * from client_profile where email = ? and password = ?', [email, password], (err, result, fields) => {
         if (result.length > 0) {
-            res.redirect("/index");
             console.log('mawgood');
+            if (email === 'admin@admin.com' && password ==='admin') {
+                res.redirect("/admin");
+            } else {
+                res.redirect("/index");
+                activity.log = 1;
+                activity.email = email;
+            }
         } else {
             console.log('m4 mawgood');
             res.redirect("/login");
         }
-        res.end();//res.send(result.length);
+        res.end();
     });
 });
 
-/*
-app.post('/',(req, res)=>{
-    if (req.body.num == 5) {
-        let first_name = req.body.firstName;
-        let last_name = req.body.lastName;
-        let email = req.body.email;
-        let password = req.body.signupPass;
-        let gender = req.body.gender;
-    
-        console.log(first_name);
-        console.log(last_name);
-        console.log(email);
-        console.log(password);
-        console.log(gender);
-    
-    
-        let query = dB.query('INSERT INTO client_profile (first_name, last_name, email, password, gender) VALUES (?, ?, ?, ?, ?)', [first_name, last_name, email, password, gender], (err, result)=>{
-            if(err) {
-                res.redirect("/");
-                throw err;
-            } else {
-                res.redirect("/login");
-                console.log('record added...');
-            }
-        });
-    } else if (req.body.num == 2){
-        let email = req.body.username;
-        let password = req.body.password;
-
-        console.log(email);
-        console.log(password);
-
-        let query = dB.query('select * from client_profile where email = ? and password = ?', [email, password], (err, result, fields) => {
-            if (result.length > 0) {
-                res.redirect("/index");
-                console.log('mawgood');
-            } else {
-                console.log('m4 mawgood');
-                res.redirect("/login");
-            }
-            res.end();//res.send(result.length);
-    });
-    }
-});
-*/
-app.get('/data', (req, res) => {
+app.get('/data1', (req, res) => {
 
     let query1 = dB.query('select * from client_profile', (err, result, fields) => {
-        //const data2 = result.length;
-        res.send({'Number= ':result.length});
+        let sender1 = {};
+        sender1.data = result.length;
+        res.send(sender1);
         console.log(result.length);
     });
-/*
-    let query2 = dB.query('select * from client_activity', (err, result, fields) => {
-        res.send({'activity':result.length});
-        console.log(result.length);
-    });
-*/
 });
 
+app.get('/data2', (req, res) => {
+
+    let query2 = dB.query('select * from client_activity', (err, result, fields) => {
+        let sender2 = {};
+        sender2.data = result.length;
+        res.send(sender2);
+        console.log(result.length);
+    });
+});
+
+
+app.post('/result',(req, res)=>{
+
+    let email = activity.email;
+    let bmi = req.body.bmi;
+
+    console.log(email);
+    console.log(bmi);
+
+    let query1 = dB.query('select client_profile.client_id from client_profile where client_profile.email = ?',[email], (err, result) => {
+        if(err) {
+            //res.redirect("/");
+            throw err;
+        } else {
+            console.log('email founded...');
+            cliendId = {};
+            cliendId = result[0].client_id;
+            console.log(cliendId);
+            let query2 = dB.query('INSERT INTO `healthy_life`.`client_activity` (`client_id`, `BMI_result`, `calculation_date`, `calculation_time`) VALUES ( ?, ?, current_date(), current_time());', [cliendId, bmi], (err, result)=>{
+                if(err) {
+                    //res.redirect("/");
+                    throw err;
+                } else {
+                    console.log('record added...');
+                }
+            });
+        }
+    });
+});
+
+
 //navigation handling
+app.get('/', (req, res) => {
+    res.sendFile(__dirname + '/index.html');
+});
 
 app.get('/index', (req, res) => {
     res.sendFile(__dirname + '/index.html');
 });
 
 
-app.get('/', (req, res) => {
+app.get('/admin', (req, res) => {
     res.sendFile(__dirname + '/adminstration.html');
 });
 
