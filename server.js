@@ -1,6 +1,6 @@
 // Setup empty JS object to act as endpoint for all routes
 const port = 7000;
-const bodyParser = require('body-parser');
+//const bodyParser = require('body-parser');
 // Require Express to run server and routes
 const express = require('express');
 const mySql = require('mysql');
@@ -93,8 +93,7 @@ app.post('/', (req, res) => {
     });
 });
 
-app.get('/data1', (req, res) => {
-
+app.get('/clintNum', (req, res) => {
     let query1 = dB.query('select * from client_profile', (err, result, fields) => {
         let sender1 = {};
         sender1.data = result.length;
@@ -102,10 +101,43 @@ app.get('/data1', (req, res) => {
         console.log(result.length);
     });
 });
-
-app.get('/data2', (req, res) => {
-
+app.get('/activityNum', (req, res) => {
     let query2 = dB.query('select * from client_activity', (err, result, fields) => {
+        let sender2 = {};
+        sender2.data = result.length;
+        res.send(sender2);
+        console.log(result.length);
+    });
+});
+
+app.get('/overWeight', (req, res) => {
+    let query2 = dB.query('select * from client_activity where BMI_result between 25 and  29.9', (err, result, fields) => {
+        let sender2 = {};
+        sender2.data = result.length;
+        res.send(sender2);
+        console.log(result.length);
+    });
+});
+
+app.get('/underWeight', (req, res) => {
+    let query2 = dB.query('select * from client_activity where BMI_result between 0 and 18.5', (err, result, fields) => {
+        let sender2 = {};
+        sender2.data = result.length;
+        res.send(sender2);
+        console.log(result.length);
+    });
+});
+app.get('/normalWeight', (req, res) => {
+    let query2 = dB.query('select * from client_activity where BMI_result between 18.5 and 24.9', (err, result, fields) => {
+        let sender2 = {};
+        sender2.data = result.length;
+        res.send(sender2);
+        console.log(result.length);
+    });
+});
+
+app.get('/obesiteWeight', (req, res) => {
+    let query2 = dB.query('select * from client_activity where BMI_result  > 30 ', (err, result, fields) => {
         let sender2 = {};
         sender2.data = result.length;
         res.send(sender2);
@@ -180,8 +212,8 @@ app.get('/about-us.html', (req, res) => {
     res.sendFile(__dirname + '/about-us.html');
 })
 
-app.get('/under-work.html', (req, res) => {
-    res.sendFile(__dirname + '/under-work.html');
+app.get('/contact-us.html', (req, res) => {
+    res.sendFile(__dirname + '/contact-us.html');
 })
 
 
