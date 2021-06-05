@@ -16,13 +16,20 @@ signupBotton.addEventListener('click', async ()=>{
     }
     const gender = selectedValue;
     
-    console.log(firstName);
-    console.log(lastName);
-    console.log(email);
-    console.log(signupPass);
-    console.log(gender);
-
-    regDataToServer(firstName, lastName, email, signupPass, gender);
+    await idToServer(email);
+    const data =await getcheck();
+    if(data.flag == 1){
+       alert("The Account is already exist please login !!");
+    }
+    else if (data.flag == 0)
+    {
+        if(firstName != '' && lastName != ''&& gender != '' && signupPass != '' && email != ''){
+            regDataToServer(firstName, lastName, email, signupPass, gender);
+            alert("Registered Successfully !!");
+        } else{
+            alert("Please fill data correctly!!");
+        }
+    }
 });
 
 const regDataToServer = async (firstName, lastName, email, signupPass, gender)=>{ 
@@ -41,4 +48,25 @@ const regDataToServer = async (firstName, lastName, email, signupPass, gender)=>
     })
 })};
 
+const idToServer = async (email)=>{ 
+    await fetch('/idcheck',{
+    method : 'POST',
+    credentials:'same-origin',
+    headers:{
+        "content-Type":"application/json"
+    },
+    body:JSON.stringify({
+        email,
+    })
+})};
 
+
+number = {};
+const getcheck = async ()=>{ 
+    const data = await fetch('/check',{
+    method : 'GET',
+    credentials:'same-origin',
+})
+number = await data.json();
+return number;
+};

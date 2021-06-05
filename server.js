@@ -1,5 +1,5 @@
 // Setup empty JS object to act as endpoint for all routes
-const port = 7000;
+const port = 8000;
 //const bodyParser = require('body-parser');
 // Require Express to run server and routes
 const express = require('express');
@@ -32,6 +32,26 @@ dB.connect((err)=>{
     }
 });
 
+
+//check data
+statusid = {};
+app.post('/idcheck', (req, res) => {
+    email = req.body.email;
+    let query1 = dB.query('select * from client_profile where email = ?;', [email], (err, result, fields) => {
+        if(result.length >0){
+            statusid.flag = 1;
+        } 
+        else{
+            statusid.flag = 0;
+        }
+        res.end();
+    });
+});
+
+app.get('/check',(req, res) => {
+    res.send(statusid);
+});
+
 //registeration
 app.post('/reg',(req, res)=>{
 
@@ -50,7 +70,8 @@ app.post('/reg',(req, res)=>{
     console.log(gender);
 
 
-    let query = dB.query('INSERT INTO client_profile (first_name, last_name, email, password, gender) VALUES (?, ?, ?, ?, ?)', [first_name, last_name, email, password, gender], (err, result)=>{
+    let query = dB.query('INSERT INTO client_profile (first_name, last_name, email, password, gender) VALUES (?, ?, ?, ?, ?)',
+     [first_name, last_name, email, password, gender], (err, result)=>{
         if(err) {
             res.redirect("/");
             throw err;
